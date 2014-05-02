@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block pagename %}post{% endblock %}
+
+{% load truncation %}
+
+
+
+<body>
+
+    {% block content %}
+
+            <!-- main
+            ================================================== -->
+            <section id="main" class="grid9 first">
+
+                <article>
+
+                    <h2 class="huge">{{ post.title }}</h2>
+                    <p class="post-info">
+                        by <span><a href="#">Andy Mack</a></span> &nbsp;
+                        on {{ post.created }}
+                        <!--filed in <span><a href="#">typography</a>, <a href="#">designs</a>, <a href="#">projects</a></span>-->
+                    </p>
+
+                    <div class="post-thumb">
+                        <a href="/blog/{{post.id}}" title="Permanent Link to ...">
+                            <img title="post-thumb" alt="post-thumb" src="../static/img/post-thumb-710x228.png">
+                        </a>
+                    </div>
+
+                    <!-- <p class="lead">{{ post.body|striptags|truncatewords:37 }}</p> -->
+
+                    <p>{{ post.body|safe}}
+
+                    <p class="tags">
+                        <span>Tagged in </span>:
+                        <!-- <a href="#">orci</a>, <a href="#">lectus</a>, <a href="#">varius</a>, <a href="#">turpis</a> -->
+                    </p>
+
+                    <p class="postmeta">
+                        <span> {% load disqus_tags %}
+                            <a href="/blog/{{ post.id }}#disqus_thread" data-disqus-identifier="{{ post.id }}">0</a>
+                            {% disqus_num_replies %} Comments</span>
+                        <span><a href="#">{{ post.created }}</a></span>
+                        <span><a href="#">0 likes</a></span>
+                        <span><a href="#">0 tweets</a></span>
+                    </p>
+
+                </article>
+
+
+                <section id="comments">
+
+                    {% load disqus_tags %}
+                    {% set_disqus_identifier post.id %}
+                    {% disqus_show_comments %}
+
+                    <!--
+                    <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                            var disqus_shortname = 'mettentot'; // required: replace example with your forum shortname
+
+                            /* * * DON'T EDIT BELOW THIS LINE * * */
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                    -->
+
+                </section>
+
+
+
+
+            </section> <!-- end main -->
+            <!-- sidebar
+            ================================================== -->
+            <aside id="sidebar" class="grid3 add-margin-top">
+
+                <h3>About Me</h3>
+
+                <p>
+                    My name is Andy and I am a software engineer in Omaha, NE.
+                    I'm currently working on the startup 5years.me
+                </p>
+
+                <h3>Good Sites</h3>
+
+                <ul class="link-list">
+                    <li><a href="https://news.ycombinator.com/">Hacker News</a></li>
+                    <li><a href="http://www.reddit.com/r/MachineLearning/">Reddit Machine Learning</a></li>
+                    <li><a href="http://www.cloudera.com/content/cloudera/en/training/roles/analysts.html">Cloudera Training</a></li>
+                    <li><a href="http://imgur.com/a/UP5k0">Best Prank Gifs</a></li>
+                    <li><a href="http://thebluthcompany.tumblr.com/">Bluth Company Tumblrt</a></li>
+                    <li><a href="http://99u.com/articles">99U - Insignts on Making Ideas Happen</a></li>
+                    <li><a href="http://paulgraham.com/articles.html">Paul Graham Essays</a></li>
+                </ul>
+
+                <h3>Popular Post</h3>
+
+                <ul class="popular-list">
+                    <li>
+                        <a href="#">
+                            None Yet
+                        </a>
+                    </li>
+                </ul>
+
+            </aside> <!-- end sidebar -->
+
+    {% endblock %}
+
+</body>
+
+</html>

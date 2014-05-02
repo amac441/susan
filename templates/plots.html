@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+    {% block content %}
+
+    {% if user.is_authenticated %}
+        <p>{{ user.username }}, the</p>
+    {% endif %}
+    <h2> {{job}} </h2>
+
+    <h3><a href="/graph">Check out the Graph Theory Output!</a></li></h3>
+
+      <h3>Here are the synonymous jobs</h3>
+      <div>
+          <p>
+              {% for jb in jobs %}
+              <li>{{jb.title}}</li>
+              {% endfor %}
+          </p>
+      </div>
+
+    <!------ JOB 1 ------->
+    {% for cluster in jobs_cluster %}
+    <h3>Here are the cluster outputs</h3>
+        <h3>&nbsp;</h3>
+        <h3>Job number {{forloop.counter}}</h3>
+    <!-- gives you path for plots -->
+        {% for jobs in cluster %}
+        <ul type="circle">
+                <li>{{jobs.0}}, {{jobs.1}}, {{jobs.2}} </li>
+        </ul>
+        {% endfor %}
+        <img src="{{cluster.0.3}}" />
+    {% endfor %}
+
+
+
+    {% endblock %}
+

@@ -1,0 +1,105 @@
+<!-- Le styles -->
+<!--link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"-->
+
+{% extends "base.html" %}
+
+{% block pagename %}blog{% endblock %}
+
+<body>
+
+    <!-- latest article
+    ================================================== -->
+    {% block content %}
+
+    {% for post in blog_list|slice:":1" %}
+
+    <article id="latest-article" class="container">
+
+        <h2><a href="/blog/{{post.id}}">{{ post.title }}</a></h2>
+        <p class="post-info">
+            by <span><a href="#">Andy Mack</a></span> &nbsp;
+            <!--filed in <span><a href="#">typography</a>, <a href="#">designs</a>, <a href="#">projects</a></span>-->
+        </p>
+
+        <div class="dcontent cf">
+            <p>{{ post.body|safe|linebreaks|truncatewords:40 }}</p>
+
+            <p class="continue cf"><a class="button" href="/blog/{{post.id}}">Continue Reading</a></p>
+
+            <div class="post-meta">
+
+                <p class="dateinfo">
+                    {{ post.created.day }}
+                    <span class="dmonth">{{ post.created|date:"b" }}</span>
+                    <span class="dyear">{{ post.created.year }}</span>
+
+                </p>
+
+                 <div class="comments">
+                    {% load disqus_tags %}
+                    <a href="/blog/{{ post.id }}#disqus_thread" data-disqus-identifier="{{ post.id }}">0</a>
+                    {% disqus_num_replies %}
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </article>
+
+    {% endfor %}
+
+    <!-- more articles
+    ================================================== -->
+
+
+    <div id="more-articles" class="container">
+
+        {% for post in blog_list|slice:"1:4" %}
+
+        <article class="cf">
+
+            <div class="grid4 a-left first">
+                <h3><a href="/blog/{{post.id}}">{{ post.title }}</a></h3>
+                <p>{{ post.created|date:"d M Y" }}</p>
+            </div>
+
+            <div class="grid8 a-right">
+                <p>{{ post.body|safe|linebreaks|truncatewords:40 }}<a href="/blog/{{post.id}}">Read More...</a> </p>
+
+                <div class="comments">
+                    {% load disqus_tags %}
+                    <a href="/blog/{{ post.id }}#disqus_thread" data-disqus-identifier="{{ post.id }}">#</a>
+                    {% disqus_num_replies %}
+                </div>
+
+            </div>
+        </article>
+
+        {% endfor %}
+
+        {% endblock %}
+
+    </div>
+
+    <!-- search section
+    ================================================== -->
+    <div id="search-section" class="container">
+        <form class="cf">
+
+            <div class="grid4 a-left first">
+                <label for="regularInput">Search the site</label>
+            </div>
+
+            <div class="grid8 a-right">
+                <input type="text" id="regularInput">
+                <button type="submit">GO</button>
+            </div>
+
+        </form>
+    </div>
+
+    </div> <!-- end content-wrap -->
+
+</body>

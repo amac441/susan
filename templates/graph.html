@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block pagename %}index{% endblock %}
+
+<body>
+
+    <!-- show linkedin search results -->
+    {% block content %}
+
+    <h3>&nbsp;</h3>
+    <h3><a href = {{png_graph}}> Pygraph Visualization </a></h3>
+    <h3>Job Description Breakdown</h3>
+
+    <h3>Common Two Word Phrases</h3>
+    {% for jobs in matches.1 %}
+        <ul type="circle">
+        <li>{{jobs.0}} {{jobs.1}}</li>
+        </ul>
+    {% endfor %}
+
+    <h3>Common Three Word Phrases</h3>
+    {% for jobs in matches.2 %}
+        <ul type="circle">
+        <li>{{jobs.0}} {{jobs.1}} {{jobs.2}} </li>
+        </ul>
+    {% endfor %}
+    <h3>&nbsp;</h3>
+    <h3>Title Breakdown</h3>
+    <h3>Singlets</h3>
+    {{jb_title.0}}
+    <h3>Bigrams</h3>
+    {{jb_title.1}}
+    <h3>Trigrams</h3>
+    {{jb_title.2}}
+
+    {% endblock %}
+
+
+</body>

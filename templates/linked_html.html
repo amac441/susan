@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+    <!-- show linkedin search results -->
+
+{% block head %}
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery Accordion Style DIV Menu</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"> </script>
+<script type="text/javascript" src="../static/js/javascript.js"> </script>
+{% endblock %}
+
+<body>
+{% block content %}
+  {% for key,value in results.items %}
+<div class="accordionButton">
+  <h3>{{key}}</h3>
+</div>
+  <div class="accordionContent" >
+    <p>
+    {% for data in value %}
+    <li>
+       <p>{{data.title}}</p>
+        <p>{{data.date}}</p>
+        <p>{{data.author}}</p>
+        <p>{{data.url}}</p>
+        <p>{{data.location}}</p>
+        <p>{{data.company}}</p>
+        <p>{{data.collectionName}}</p>
+        <p>{{data.primaryGenreName}}</p>
+        <p>{{data.course_page}}</p>
+        <p>{{data.feedURL}}</p> 
+    </li>
+    {% endfor %}
+    </p>
+  </div>
+  {% endfor %}
+<div class="accordionButton">
+  <h3>Youtube</h3>
+  </div>
+  <div class="accordionContent">
+  <p>coming soon</p>
+  </div>
+  <div class="accordionButton">
+  <h3>LinkedIn</h3>
+  </div>
+  <div class="accordionContent">
+  <p>coming soon</p>
+  </div>
+
+    {% endblock %}
+
+
+</body>

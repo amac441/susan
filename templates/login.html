@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+    {% block content %}
+
+	<h3>Please Login</h3>
+
+	<body>{% if form.errors %}
+		<p class = "text-warning">UN and PW didnt match</p>
+		{% endif %}
+
+		 <!--the action here needs to be changed -->
+		 <form action='/auth' method='POST'>
+			{% csrf_token %}
+			<!--{{form}}-->
+			<label for="username">Username</label>
+			<input type="text" name="username" value ="" id="username">
+			<label for="password">Password</label>
+			<input type="password" name="password" value ="" id="password">
+
+
+			<input class="btn btn-primary" type="submit" value="Login" />
+			<!--<input type="hidden" name="next" value="{{ next }}" />-->
+		</form>
+	</body>
+
+   {% endblock %}

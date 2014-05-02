@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block pagename %}index{% endblock %}
+
+<!-- http://stackoverflow.com/questions/866272/how-can-i-build-multiple-submit-buttons-django-form  -->
+
+<body>
+
+    <!-- latest article
+    ================================================== -->
+    {% block content %}
+
+    <div >
+        <p class="lead">Welcome to <a href= "/metten"><b>metten tot wetten</b></a>. </p>
+
+        <p class="lead">MTW Ventures, was started in 2013 with the goal of using metrics and
+        analytics to promote <b><i>structure, clarity, and incremental growth</i></b> in the careers and education space.
+        The company’s title stands for “Metten Tot Wetten,” a Dutch saying which means “From Measuring to Knowing.”
+        </p>
+
+        <p class="lead">Primarily, this site is used as the prototyping sandbox for application the <a href="http://www.5years.me">5years.me</a>.
+
+        <p>&nbsp;</p>
+
+    </div>
+
+        <h3> What are you interested in (ex: "Science") </h3>
+        <div class="well col-md-6">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form_l}}
+                <button type="submit", name="linkedin_search">Search</button>
+            </form>
+        </div>
+
+
+        <h3> So, on {{date}} </h3>
+
+        <div class="well col-md-6">
+            <p> What do you want to be doing with your life! </p>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit", name="job_search">Search</button>
+            </form>
+        </div>
+
+        <p>&nbsp;</p>
+
+        <iframe src="http://www.slideshare.net/slideshow/embed_code/32534701" width="610" height="500" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/AndrewMacKrell/5years-new" title="5years new" target="_blank">5years new</a> </strong> from <strong><a href="http://www.slideshare.net/AndrewMacKrell" target="_blank">Andrew MacKrell</a></strong> </div>
+
+        <p>&nbsp;</p>
+
+
+
+        <p><i>The achievement of difficult goals entails not only talent but also the sustained and focused application of talent over time.</i></p>
+
+        <!--
+
+        <p class="lead">Technology involved is:</p>
+        <ol class="lead">
+            <li>WebScraping and Text Analytics via Natural Language Processing</li>
+            <li>Data Analytics / Pattern Recognition / Optimal Path Selection</li>
+            <li>Machine Learning and Graph Theory Algorithms</li>
+        </ol>
+        </p>
+        <div>
+        <h3>
+            <p>Prezi Overview</p>
+        <p>&nbsp;</p>
+
+        <iframe src="http://prezi.com/embed/gp5lu_h9jzuf/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="750" height="500" frameBorder="0" webkitAllowFullScreen mozAllowFullscreen allowfullscreen></iframe>
+
+        <p>&nbsp;</p>
+
+        -->
+
+    <!--<image src="../static/img/charts/sankey.PNG"></image>-->
+
+
+    {% endblock %}
+
+
+</body>

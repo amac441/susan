@@ -1,0 +1,22 @@
+<!-- Le styles -->
+<!--link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"-->
+{% extends "base.html" %}
+
+{% block pagename %}tagpage{% endblock %}
+
+<body>
+    <div class="container">
+        <h1>Posts tagged: {{tag}}</h1>
+
+        {% block content %}
+
+        {% for post in posts %}
+
+        <p>{{ post.created|date:"Y-m-d"}}: <a href="/blog/{{post.id}}">{{ post.title }}</a></p>
+
+        {% endfor %}
+
+        {% endblock %}
+    </div> <!-- /container -->
+</body>
+

@@ -1,0 +1,12 @@
+<div>
+    <h2>Search Jobs</h2>
+    <form class="well form-search">
+        <label>Search:</label>
+        <input type="text" ng-model="searched" class="input-medium search-query" placeholder="Keywords...">
+        <button type="submit" class="btn btn-success" ng-click="searchFor()">Search</button>
+        Try for example: "software engineer" or "mathemetician" or "artist"
+    </form>
+    <ul ng-repeat="searches in search">
+        <li ng-class="{active:searches.active}">{[{searches.title}]}</li>
+    </ul>
+</div>

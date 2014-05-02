@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!-->
+
+ <!--<![endif]-->
+ {% load ganalytics %}
+
+
+<head>
+
+    <!--- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Metten Tot</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS
+    ================================================== -->
+
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/layout.css" />
+
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    {% ganalytics %}
+
+    {% block head %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <div id="content-wrap">
+
+        <!-- Header
+        ================================================== -->
+        <header class="container">
+
+            <hgroup>
+                <h1><a href="/">metten tot wetten</a></h1>
+                <h3>measuring to knowing </h3>
+                {% if user.is_staff %}
+                {% endif %}
+            </hgroup>
+
+            <nav id="nav-wrap" class="cf">
+                <!--need to figure how to add this - class="current" -->
+                <ul id="menu">
+                    <li {% if not blog_list or archive_list %} class="current" {% endif %}><a
+                    href="/">Home</a></li>
+                    <li {% if blog_list %} class="current" {% endif %}><a
+                    href="/blog">Blog</a></li>
+                    <li {% if archive_list %} class="current" {% endif %}><a
+                    href="/blog/archives">Archives</a></li>
+                    <li><a href="/metten">About</a></li>
+                    <li>
+                        <a href="/5years">5years +</a>
+                        <ul>
+                            <li><a href="/5years"><span>- </span>Interests</a></li>
+                            <li><a href="/5years/#/jobs"><span>- </span>Jobs</a></li>
+                            <li><a href="/5years/#/calendar"><span>- </span>Calendar</a></li>
+                            <li><a href="/5years/#/add"><span>- </span>Add Items</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul> <!-- end #menu -->
+
+            </nav>
+        </header>
+
+        <!-- article content
+        ================================================== -->
+        <div id="content" class="container">
+
+            <article>
+                <!-- blog post -->
+                {% block content %}
+                {% endblock %}
+            </article> <!-- blog post ends -->
+
+        </div> <!-- end content-wrap -->
+    </div>
+    <!-- footer
+    ================================================== -->
+    <footer class="container">
+
+        <!-- footer-bottom
+        ================================================== -->
+        <div id="footer-bottom" class="grid12 first">
+
+            Questions email: info@mettentotwetten.com
+            <p>
+                2013 Copyright MTW Ventures &nbsp; &nbsp; &nbsp;
+            </p>
+
+            <!-- Back To Top Button -->
+            <div id="go-top"><a href="#" title="Back to Top">Go To Top</a></div>
+
+        </div>
+
+    </footer>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../static/js/jquery-1.10.2.min.js"><\/script>')</script>
+
+    <script src="../static/js/custom.js"></script>
+
+</body>
+
+</html>

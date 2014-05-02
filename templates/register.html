@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+    {% block content %}
+
+	<h3>Register</h3>
+
+			<form action='/register' method='POSTt'>
+			{% csrf_token %}
+			{{user_form}}
+			{{profile_forms}}
+			<input class="btn btn-primary" type="submit" value="Register" />
+
+			</form>
+
+
+   {% endblock %}
