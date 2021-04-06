@@ -107,7 +107,7 @@ django-ganalytics==0.2
 -e git://github.com/thornomad/django-hitcount.git@178680e43766982f5ebf05b6b5620e9fea70b37c#egg=django_hitcount-master
 django-mptt==0.5.5
 django-openid-auth==0.5
-django-registration==0.8
+django-registration==3.1.2
 django-sekizai==0.7
 django-social-auth==0.7.23
 django-tagging==0.3.1
