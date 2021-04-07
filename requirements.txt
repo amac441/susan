@@ -74,7 +74,7 @@ ZEO==4.0.0b1
 ZODB==4.0.0b3
 ZODB3==3.11.0a3
 alembic==0.6.2
-ansible==1.5.4
+ansible==2.10.0
 argparse==1.2.1
 async==0.6.1
 basemap==1.0.7
