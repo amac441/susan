@@ -101,7 +101,7 @@ distro-info==0.0.0
 django-blog-zinnia==0.12.3
 django-classy-tags==0.4
 django-cms==2.4.2
-django-debug-toolbar==1.1
+django-debug-toolbar==1.11.1
 django-disqus==0.4.1
 django-ganalytics==0.2
 -e git://github.com/thornomad/django-hitcount.git@178680e43766982f5ebf05b6b5620e9fea70b37c#egg=django_hitcount-master
