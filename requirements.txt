@@ -67,7 +67,7 @@ VTK==5.8.0
 WTForms==1.0.4
 WeasyPrint==0.21
 WebOb==1.2.3
-Werkzeug==0.8.3
+Werkzeug==0.15.3
 Whoosh==2.4.1
 ZConfig==3.0.3
 ZEO==4.0.0b1
