@@ -290,7 +290,7 @@ tweepy==2.0
 twilio==3.5.1
 twitter==1.9.4
 unittest2==0.5.1
-urllib3==1.5
+urllib3==1.26.5
 urwid==1.1.1
 us==0.7
 venusian==1.0a8
