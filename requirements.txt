@@ -53,7 +53,7 @@ QuantLib-Python==1.2
 RestrictedPython==3.6.0
 SPARQLWrapper==1.5.2
 SQLAlchemy==0.8.3
-Scrapy==0.16.5
+Scrapy==1.8.1
 Shapely==1.2.17
 South==0.8.1
 SpaceFuncs==0.52
