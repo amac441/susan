@@ -1,5 +1,5 @@
 BTrees==4.0.8
-Babel==0.9.6
+Babel==2.9.1
 BeautifulSoup==3.2.1
 Chameleon==2.11
 Cheetah==2.4.4
