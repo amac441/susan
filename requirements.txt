@@ -247,7 +247,7 @@ pyzmq==13.1.0
 qrcode==2.7
 rdflib==4.0.1
 redis==2.8.0
-reportlab==2.7
+reportlab==3.5.55
 repoze.lru==0.6
 requests==2.2.0
 requests-cache==0.4.4
