@@ -187,7 +187,7 @@ oauth==1.0.1
 oauth2==1.5.211
 oauthlib==0.6.1
 openopt==0.5304
-openpyxl==1.6.2
+openpyxl==2.4.2
 oursql==0.9.3.1
 pandas==0.13.1
 paramiko==1.10.1
