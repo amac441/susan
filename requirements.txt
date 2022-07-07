@@ -249,7 +249,7 @@ rdflib==4.0.1
 redis==2.8.0
 reportlab==2.7
 repoze.lru==0.6
-requests==2.2.0
+requests==2.20.0
 requests-cache==0.4.4
 requests-oauthlib==0.4.0
 resolver-test==1.0.1
