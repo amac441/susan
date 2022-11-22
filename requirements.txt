@@ -38,7 +38,7 @@ PIL==1.1.7
 Paste==1.7.5.1
 PasteDeploy==1.5.0
 Pattern==2.6
-Pillow==2.4.0
+Pillow==9.3.0
 Pinax==0.9a2
 PyAMF==0.6.1
 PyPDF2==1.20
